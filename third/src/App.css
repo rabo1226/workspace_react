@@ -41,3 +41,9 @@
   font-weight: bold;
   margin-bottom: 10px;
 }
+
+.gray_back{
+  background-color: lightgrey;
+  padding: 12px;
+  margin: 10px 0px;
+}

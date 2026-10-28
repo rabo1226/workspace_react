@@ -8,6 +8,8 @@ import Practice_5 from "./Practice_5"
 import Parent from "./Parent"
 import Practice_6 from "./Practice_6"
 import Map_1 from "./Map_1"
+import Map_2 from "./Map_2"
+import Map_3 from "./Map_3"
 //css파일, main.jsx(import.css)/APP.jsx(import.css) 삭제
 function App() {
 
@@ -24,7 +26,9 @@ function App() {
       <Practice_5 /> */}
       {/* <Parent /> */}
       {/* <Practice_6 /> */}
-      <Map_1 />
+      {/* <Map_1 /> */}
+      {/* <Map_2 /> */}
+      <Map_3 />
     </>
   )
 }

@@ -1,0 +1,21 @@
+.a-div{
+  display: flex;
+  gap: 15px;
+}
+.c-div{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  gap: 15px;
+}
+.c-div > p{
+  margin: 0px;
+}
+
+.f-div{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  gap: 15px;
+}
+

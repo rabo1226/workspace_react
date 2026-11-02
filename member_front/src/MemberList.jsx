@@ -1,12 +1,13 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 
 const MemberList = () => {
   //1. useSate memberList[] -> useEffect, getMember(정의문) 보류 -> return 그리기 -> memberList === 0 / 조회한 학생 목록이 없습니다 가 먼저 그려짐
   //그려진 다음 useEffect 실행 getMember() -> 회원목록 조회 data = setMemberList에 저장-> 리랜더링 -> memberList !== 0 map함수 ->useEffect 실행 x (마운트때만이니까!)
 
 
-  //조회한 회원 목록 데이터를 저장할 변수 useState 변수 / 데이터 초기값 설정 -> 데이터가 넘어올 때의 최종 형태 [{}, {}] -> []
+  //조회한 회원 목록 데이터를 저장할 변수 useState 변수 / 데이터 초기값 설정 -> 데이터 저장될 때의 최종 형태 List로 저장될거니  [{}, {}] -> []
   const [MemberList, setMemberList] = useState([]);
 
   //회원 목록 데이터 조회(마운트 시[] / 마운트+업데이트 )  / 업데이트 시를 추가하면 리랜더링 후 다시 set실행 무한반복
@@ -26,17 +27,21 @@ const MemberList = () => {
     }
   }
 
+  //<Link to='detail'>클릭<Link/> = a태그 , html / const nav = useNavigate(); nav('/detail');  = location.href , js
+  const nav = useNavigate();
+
+
   return (
     <>
       <h3>회원 목록 페이지</h3>
-      <table>
+      <table className='stu_list' >
         <thead>
           <tr>
             <td>NO</td>
             <td>학생 아이디</td>
             <td>학생명</td>
             <td>학생나이</td>
-            <td>학생성별</td>
+            <td>성별</td>
           </tr>
         </thead>
         <tbody>
@@ -48,7 +53,7 @@ const MemberList = () => {
             :
             MemberList.map((member, i)=>{
               return (
-                <tr key={member.memId}>
+                <tr key={member.memId} onClick={e => nav(`/detail/${member.memId}`)}>
                   <td>{MemberList.length - i}</td>
                   <td>{member.memId}</td>
                   <td>{member.memName}</td>
@@ -60,6 +65,8 @@ const MemberList = () => {
           }
         </tbody>
       </table>
+      <br />
+      <button type='button' onClick={ e => nav('/reg')}>회원 등록</button>
     </>
   )
 }

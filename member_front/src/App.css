@@ -1,0 +1,9 @@
+.stu_list{
+  border: 1px solid black;
+  text-align: center;
+}
+
+.stu_list td{
+  padding: 6px;
+  border: 1px solid black;
+}

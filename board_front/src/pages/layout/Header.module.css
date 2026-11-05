@@ -1,0 +1,15 @@
+.header_container{
+  margin-bottom: 10px;
+}
+
+.menu{
+  display: flex;
+  justify-content: end;
+  gap: 12px;
+  font-size: 0.8rem;
+}
+
+.title{
+  text-align: center;
+  margin-top: 8px;
+}

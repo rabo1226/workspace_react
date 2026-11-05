@@ -4,6 +4,7 @@ import { Route, Routes } from 'react-router-dom'
 import MemberList from './MemberList'
 import Detail from './Detail'
 import RegMember from './RegMember'
+import Update from './Update'
 
 function App() {
 
@@ -18,6 +19,8 @@ function App() {
         <Route path='/detail/:memId' element={ <Detail />} />
         {/* 회원 등록 페이지 */}
         <Route path='/reg' element={ <RegMember /> } />
+        {/* 회원 정보 수정 페이지 */}
+        < Route path='/update/:memId' element={ <Update />} />
       </Routes>
 
 

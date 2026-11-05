@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 const Detail = () => {
   //회원을 조회했을 때 app에서 조회한 뒤 List, Detail로 props로 전달하는 거 가능 (이는 bb 1회만 조회해서 응용 가능 / 잘 변하지 않는 데이터면 이 방식이 좋다)
@@ -32,6 +32,33 @@ const Detail = () => {
     }
   }
 
+  //삭제버튼 클릭 -> 정말 삭제할? -> 삭제 -> 목록페이지
+  //삭제 버튼 클릭 시 실핼함수
+  const del_member = () => {
+    if( confirm('삭제 하시겠습니까?') ){
+      doDelete();
+    }
+  }
+
+  //삭제하러 가야지!
+  const doDelete = async () => {
+    try{
+        await axios.delete(`http://localhost:8080/members/${memberInfo.memId}`);
+        nav('/');
+      }catch(e){
+        console.log(e);
+        console.log('회원 삭제 중 오류 발생!');
+      }
+  }
+
+  //가야쥐!
+  const nav = useNavigate();
+
+  //수정버튼 클릭 -> 수정 페이지 이동 + 원본 데이터 가져가지 -> input 태그 내용 변경 후 수정 실행 -> 상세페이지 이동
+
+  //react 버전 -> onclick 했을 때 input태그를 바꾸면 원본데이터를 가지고 이동할 필요가 없다!
+
+
   return (
     <>
       <h3>회원 상세 정보</h3>
@@ -43,9 +70,11 @@ const Detail = () => {
 
       <br />
 
-      <button type='button'>목록가기</button>
-      <button type='button'>수정하기</button>
-      <button type='button'>삭제허기</button>
+      <button type='button' onClick={ e => nav('/') }>목록가기</button>
+
+      <button type='button' onClick={ e => nav(`/update/${memberInfo.memId}`) }>수정하기</button>
+
+      <button type='button' onClick={ e => del_member() }>삭제하기</button>
     </>
   )
 }

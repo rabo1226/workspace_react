@@ -1,0 +1,5 @@
+/* 공통된 디자인 적용에 사용 가능 */
+.container{
+  width: 70%;
+  margin: 30px auto;
+}

@@ -1,0 +1,31 @@
+.table_div{
+  width: 100%;
+  margin: 20px 0px;
+}
+
+.list_table{
+  width: 100%;
+}
+
+.list_table td{
+  padding: 4px 6px;
+  text-align: center;
+}
+
+.list_table > thead > tr{
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+.list_table > tbody > tr{
+  border-bottom: 1px solid black;
+}
+
+.list_table > tbody > tr > td:nth-child(2){
+  text-align: left;
+}
+
+.list_table > tbody > tr:hover{
+  background-color: rgb(211, 211, 211, 0.1);
+  cursor: pointer;
+}

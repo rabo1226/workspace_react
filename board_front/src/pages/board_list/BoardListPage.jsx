@@ -3,6 +3,8 @@ import BoardList from './BoardList'
 import BoardSearch from './BoardSearch'
 import axios from 'axios'
 import { getBoardList } from '../../apis/board_api'
+import { useNavigate } from 'react-router-dom'
+
 
 //게시글 목록 페이지 전체를 표현하는 컴포넌트
 
@@ -29,6 +31,9 @@ const BoardListPage = () => {
     getList();
   } , []);
 
+  //게시글 등록 페이지 이동 함수
+  const nav = useNavigate();
+
   return (
     <>
       {/* 게시글 검색 페이지의 글 검색 영역 */}
@@ -39,7 +44,7 @@ const BoardListPage = () => {
 
       {/* 게시글 목록 페이지의 버튼 영역 */}
       <div>
-        <button type='button'>글쓰기</button>
+        <button type='button' onClick={ e => {nav('/write')}}>글쓰기</button>
       </div>
     </>
   )

@@ -14,3 +14,6 @@ export const getBoardList = async () => {
     console.log('게시글 목록 조회 API 호출 실패!');
   }
 }
+
+//게시글 상세 조회 함수
+

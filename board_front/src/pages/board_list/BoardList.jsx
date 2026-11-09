@@ -39,7 +39,7 @@ const BoardList = ({boardList}) => {
             :
               boardList.map((board, i) => {
                 return(
-                  <tr key={i} onClick={ e => nav('/datail') }>
+                  <tr key={i} onClick={ e => nav(`/datail/${board.boardNum}`) }>
                     <td>{boardList.length - i}</td>
                     <td>{board.title}</td>
                     <td>{board.writer}</td>

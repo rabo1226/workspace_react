@@ -5,8 +5,8 @@ import Header from './pages/layout/Header'
 import BoardList from './pages/board_list/BoardList'
 import BoardListPage from './pages/board_list/BoardListPage'
 import WritePage from './pages/board_write/WritePage'
-import BoardDetailPage from './pages/board_detail/boardDetailPage'
-import BoardDetail from './pages/board_detail/boardDetail'
+import BoardDetailPage from './pages/board_detail/BoardDetailPage'
+import BoardDetail from './pages/board_detail/BoardDetail'
 
 //pages
 //-게시글 목록 페이지 (boardList) 폴더 / boardList -> boardListPage.jsx <- boardList.jsx
@@ -20,17 +20,14 @@ function App() {
       <Header />
 
       <Routes>
-
         {/* 게시판 목록 페이지 */}
         <Route path='/' element={ <BoardListPage/> }></Route>
         {/* 게시글 등록 페이지 */}
         <Route path='/write' element={ <WritePage /> }></Route>
         {/* 게시글 상세 페이지 */}
-        <Route path='/datail' element={ <BoardDetailPage/> }></Route>
+        <Route path='/datail/:boardNum' element={ <BoardDetailPage/> }></Route>
       </Routes>
-
       
-
     </div>
   )
 }

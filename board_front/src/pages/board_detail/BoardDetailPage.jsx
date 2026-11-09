@@ -1,24 +1,24 @@
 import React, { useState } from 'react'
-import BoardDetail from './boardDetail'
 import ReplyList from './ReplyList'
 import { useParams } from 'react-router-dom'
+import BoardDetail from './BoardDetail';
 
 const BoardDetailPage = () => {
-  //게시글 번호로 저장 함수
+  //url Paramete 저장 함수
   const {boardNum} = useParams();
-  const [num, setNum] = useState();
-  setNum(...boardNum);
 
-  console.log('게시글 번호');
-  
-  //게시글을 조회
+    
+  //댓글 목록 조회 -> 댓글이 없으면 '댓글이 없습니다.' / Reply.jsx -> 댓글 하나의 형태 / ReplyList에 Reply.jsx를 반복해서 그린다.
+  //글번호 props로 전달!
+
+
   return (
     <div>
-      <p>연결확인</p>
-      {/* 게시글 상세보기 */}
-        <BoardDetail/>
-      {/* 게시글의 댓글 */}
-        <ReplyList />
+      <h2>게시글 상세 보기 페이지</h2>
+      {/* 게시글 상세 정보 컴포넌트 */}
+      <BoardDetail boardNum={boardNum}/>
+      {/* 댓글 목록 정보 컴포넌트 */}
+      <ReplyList boardNum={boardNum}/>
     </div>
   )
 }

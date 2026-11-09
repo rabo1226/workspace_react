@@ -15,5 +15,29 @@ export const getBoardList = async () => {
   }
 }
 
-//게시글 상세 조회 함수
 
+/**
+ * 게시글 상세 조회 함수
+ * @param {boardNum} 글번호 
+ * @returns 응답결과
+ */
+export const getDetailAPI = async (boardNum) => {
+  try{
+    const response = await axios.get(`http://localhost:8080/boards/${boardNum}`);
+    return response;
+  }catch(e){
+    console.log(e);
+    console.log('게시글 상세 조회 API 호출 실패!');
+  }
+}
+
+//게시글 삭제 함수
+export const deleteBoardAPI = async (boardNum) => {
+  try {
+    const response = await axios.delete(`http://localhost:8080/boards/${boardNum}`);
+    return response;
+  } catch (e) {
+    console.log(e);
+    console.log('게시글 삭제 API 호출 실패!');
+  }
+}

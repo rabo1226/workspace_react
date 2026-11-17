@@ -3,13 +3,15 @@ import Reply from './Reply'
 import { useParams } from 'react-router-dom'
 import {getReplyListAPI } from '../../apis/reply_api';
 
-const ReplyList = ({boardNum}) => {
+const ReplyList = ({boardNum, reload}) => {
+  console.log('ReplyList 랜더링');
   //조회한 댓글 목록 저장할 state 변수
   const [replyList, setReplyList] = useState([]);
-  //마운트 시 댓글 목록 조회
+
+  //마운트 시 댓글 목록 조회 / [reload] 마운트, reload state 변수가 변경될때만 리랜더링!
   useEffect( ( )=> {
     getReplyList();
-  }, []);
+  }, [reload]);
 
   //댓글 목록 조회 함수
   const getReplyList = async () => {

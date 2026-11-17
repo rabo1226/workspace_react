@@ -1,0 +1,12 @@
+.reply_write_container{
+  margin: 16px 0px;
+}
+
+.input_div{
+  display:  flex;
+  gap: 10px;
+}
+
+.input_div > input{
+  width: 360px;
+}

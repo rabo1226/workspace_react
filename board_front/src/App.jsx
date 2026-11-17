@@ -7,6 +7,7 @@ import BoardListPage from './pages/board_list/BoardListPage'
 import WritePage from './pages/board_write/WritePage'
 import BoardDetailPage from './pages/board_detail/BoardDetailPage'
 import BoardDetail from './pages/board_detail/BoardDetail'
+import JoinPage from './pages/join/JoinPage'
 
 //pages
 //-게시글 목록 페이지 (boardList) 폴더 / boardList -> boardListPage.jsx <- boardList.jsx
@@ -26,6 +27,9 @@ function App() {
         <Route path='/write' element={ <WritePage /> }></Route>
         {/* 게시글 상세 페이지 */}
         <Route path='/datail/:boardNum' element={ <BoardDetailPage/> }></Route>
+
+        {/* 회원가입 페이지 */}
+        <Route path='/join' element={ <JoinPage/> }></Route>
       </Routes>
       
     </div>
